@@ -1,39 +1,102 @@
-1. Bluetooth-Controlled RC Robot with Ultrasonic Sensor (Arduino Project)
+# 🤖 Bluetooth-Controlled RC Robot with Ultrasonic Sensor (Arduino Project)
 
-Objective:
-This project aimed to design and develop a remote-controlled robot that could be operated via Bluetooth communication. In addition, the robot was equipped with an ultrasonic sensor to enhance its functionality by enabling obstacle detection, ensuring that the robot could autonomously stop or change direction when an obstacle was in its path.
+## 📌 Objective
 
-Components Used:
-	•	Arduino Uno (microcontroller)
-	•	L298N motor driver (to control the motors)
-	•	HC-05/HC-06 Bluetooth module (for wireless communication)
-	•	HC-SR04 ultrasonic sensor (for obstacle detection)
-	•	2 DC motors (for movement)
-	•	Robot chassis and wheels
-	•	Jumper wires and power supply (for powering the motors and other components)
+This project focuses on designing and building a remote-controlled robot that utilises Bluetooth communication. The robot is also equipped with an **ultrasonic sensor** for obstacle detection, adding semi-autonomous functionality. The robot can detect obstacles in its path and stop or change direction accordingly, providing both manual control and collision avoidance.
 
-Features:
-	•	Bluetooth Remote Control: The robot could be controlled via a smartphone or Bluetooth-enabled device. The Bluetooth module received commands (‘F’ for forward, ‘B’ for backward, ‘L’ for left, ‘R’ for right, and ‘S’ for stop) from the user to dictate the robot’s movement. This provided a wireless way of controlling the robot remotely.
-	•	Obstacle Detection: The robot was equipped with an ultrasonic sensor mounted at the front. The sensor continuously measured the distance between the robot and any obstacles ahead. If an obstacle was detected within a pre-set distance threshold (e.g., 15 cm), the robot would automatically stop to prevent a collision. This feature added an autonomous aspect to the robot, making it more intelligent and self-reliant in avoiding obstacles.
-	•	Smooth Motor Control: The motors were controlled via the L298N motor driver, with adjustable speeds for smoother turns and movement transitions. PWM (Pulse Width Modulation) was used to regulate the speed of the motors, allowing for precise control when turning or moving forward/backward.
+---
 
-How It Works:
-	1.	The robot receives commands from a Bluetooth device (e.g., a smartphone) using the HC-05/06 Bluetooth module. The Bluetooth communication is handled by the Arduino’s SoftwareSerial library.
-	2.	Depending on the command sent (‘F’ for forward, ‘B’ for backward, ‘L’ for left, ‘R’ for right, ‘S’ for stop), the robot moves in the desired direction. The motors are driven by the L298N motor driver, which allows the control of both forward/reverse movement and turning.
-	3.	The ultrasonic sensor (HC-SR04) measures the distance to obstacles in front of the robot. If an obstacle is detected within 15 cm, the robot automatically stops to avoid a collision.
-	4.	The project integrated various elements such as motor control, wireless communication, and sensor-based obstacle avoidance to create a more versatile robot.
+## 🔧 Components Used
 
-Challenges Faced:
-	•	Bluetooth Communication: Ensuring seamless communication between the smartphone and the robot was a challenge, particularly due to signal interference or connectivity issues. Fine-tuning the Bluetooth pairing process and data transmission between devices was crucial.
-	•	Obstacle Avoidance Algorithm: Programming the robot to not only detect obstacles but also decide when to stop or change direction without user intervention added complexity. It required optimizing the sensor readings and ensuring real-time responses from the motors.
+- **Arduino Uno** (microcontroller)
+- **L298N Motor Driver** (to control motors)
+- **HC-05 / HC-06 Bluetooth Module** (for wireless communication)
+- **HC-SR04 Ultrasonic Sensor** (for obstacle detection)
+- **2 DC Motors** (for robot movement)
+- **Robot Chassis & Wheels**
+- **Jumper Wires**
+- **Battery / Power Supply**
 
-Learning Outcomes:
-	•	Arduino Programming: This project helped strengthen your skills in using Arduino’s IDE and integrating multiple modules (Bluetooth and ultrasonic sensor) to create a functional system.
-	•	Motor Control: The use of PWM for precise speed control and direction handling of DC motors provided hands-on experience in working with motor drivers.
-	•	Wireless Communication: The Bluetooth-controlled feature gave insight into wireless communication protocols and handling real-time user input.
+---
 
-Future Enhancements:
-	•	You could expand this project by adding more sensors (e.g., infrared or additional ultrasonic sensors for side or rear detection) to make the robot fully autonomous in navigating a more complex environment.
-	•	Integration with a mobile app that offers more sophisticated control, such as voice commands or sensor data visualization, could further enhance the project’s capabilities.
+## 🚀 Features
 
-This project demonstrates your ability to integrate various hardware and software components to create a functional robotic system. It also highlights your problem-solving skills in overcoming challenges related to real-time control and autonomous functionality.
+### 📱 Bluetooth Remote Control
+- Controlled via a Bluetooth-enabled device (e.g., smartphone).
+- Command format:
+  - `'F'` → Move Forward
+  - `'B'` → Move Backward
+  - `'L'` → Turn Left
+  - `'R'` → Turn Right
+  - `'S'` → Stop
+
+### 🧠 Obstacle Detection (Autonomous Behavior)
+- Ultrasonic sensor mounted at the front.
+- Detects obstacles within a **15 cm** range.
+- Automatically stops the robot to prevent collisions.
+
+### 🎯 Smooth Motor Control
+- Motors controlled via L298N driver.
+- **PWM (Pulse Width Modulation)** used for speed regulation.
+- Smooth turning and movement transitions.
+
+---
+
+## ⚙️ How It Works
+
+1. **Bluetooth Communication**  
+   The HC-05/06 module receives serial commands via the **SoftwareSerial** library on the Arduino.
+
+2. **Movement Control**  
+   Commands control the L298N motor driver to drive the robot forward, backward, left, right, or stop.
+
+3. **Obstacle Detection**  
+   The HC-SR04 ultrasonic sensor continuously checks for obstacles. If an object is detected within 15 cm, the robot halts to avoid a collision.
+
+4. **Autonomous Integration**  
+   Combines remote control with real-time autonomous decision-making for obstacle avoidance.
+
+---
+
+## 🧩 Challenges Faced
+
+- **Bluetooth Interference:**  
+  Maintaining stable communication and pairing between the smartphone and HC-05 was sometimes difficult due to signal loss or delay.
+
+- **Sensor Optimization:**  
+  Writing the obstacle avoidance logic required careful calibration of distance thresholds and response times for accurate behavior.
+
+---
+
+## 📚 Learning Outcomes
+
+- 🛠️ **Arduino Programming:**  
+  Gained hands-on experience in integrating multiple hardware modules and writing efficient Arduino code.
+
+- ⚡ **Motor Driver + PWM:**  
+  Learned how to control motor speed and direction using pulse-width modulation.
+
+- 📡 **Wireless Communication:**  
+  Understood Bluetooth protocols and managing real-time command input from a mobile device.
+
+---
+
+## 🚀 Future Enhancements
+
+- Add additional sensors (IR or ultrasonic) for full 360° awareness.
+- Implement voice command integration via mobile app.
+- Build a GUI-based mobile app for real-time sensor feedback and joystick-style control.
+- Add path planning for full autonomy.
+
+---
+
+## 🧑‍💻 Author
+
+**Arijit Bhattacharjee**  
+🎓 B.Tech CSE | Hardware Enthusiast | Arduino Developer  
+🔗 GitHub: [https://github.com/wiskey067](https://github.com/wiskey067)  
+📧 Email: [ab9777816@gmail.com]
+
+---
+
+> This project demonstrates a blend of manual control and intelligent behaviour using affordable electronic components. It’s a great starting point for anyone interested in robotics, embedded systems, or IoT.
